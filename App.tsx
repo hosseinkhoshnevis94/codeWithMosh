@@ -19,6 +19,9 @@ import SecondForm from "./components/SecondForm/SecondForm";
 import ThirdForm from "./components/ThirdForm/ThirdForm";
 import Category from "./components/Category/Category";
 import Users from "./components/Users/Users";
+import ToDoList from "./components/ToDoList/ToDoList";
+import Counter from "./State-managment/Counter";
+
 
 function App() {
   let cities: { id: number; name: string }[] = [
@@ -29,7 +32,6 @@ function App() {
     { id: 5, name: "NewYork" },
   ];
   const [showAlert, setShowAlert] = useState(false);
-
   const handleAlertCityName = (cityName: string) => alert(cityName);
 
   return (
@@ -95,8 +97,13 @@ function App() {
       <hr />
       <Category></Category>
       <hr /> */}
-      <Users></Users>
-      
+      {/* <Users></Users> */}
+      {/* <ToDoList></ToDoList> */}
+      {/* <Posts></Posts> */}
+      {/* <TodoForm></TodoForm>
+      <TodoList></TodoList> */}
+      <Counter></Counter>
+
     </>
   );
 }
