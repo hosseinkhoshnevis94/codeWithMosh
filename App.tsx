@@ -21,7 +21,15 @@ import Category from "./components/Category/Category";
 import Users from "./components/Users/Users";
 import ToDoList from "./components/ToDoList/ToDoList";
 import Counter from "./State-managment/Counter";
-
+import TaskList from "./State-managment/tasks/TaskList";
+import LoginStatus from "./State-managment/auth/LoginStatus";
+import { useReducer } from "react";
+import tasksContext from "./State-managment/tasks/tasksContext";
+import NavBar from "./State-managment/NavBar";
+import userContext from "./State-managment/auth/userContext";
+import AuthReducer from "./State-managment/auth/authReducer";
+import AuthProvider from "./State-managment/auth/AuthProvider";
+import TaskProvider from "./State-managment/tasks/TaskProvider";
 
 function App() {
   let cities: { id: number; name: string }[] = [
@@ -32,6 +40,7 @@ function App() {
     { id: 5, name: "NewYork" },
   ];
   const [showAlert, setShowAlert] = useState(false);
+  const [user, authDispatch] = useReducer(AuthReducer, "");
   const handleAlertCityName = (cityName: string) => alert(cityName);
 
   return (
@@ -102,8 +111,14 @@ function App() {
       {/* <Posts></Posts> */}
       {/* <TodoForm></TodoForm>
       <TodoList></TodoList> */}
-      <Counter></Counter>
-
+      {/* <Counter></Counter> */}
+      {/* <TaskProvider>
+        <AuthProvider>
+          <NavBar></NavBar>
+          <TaskList></TaskList>
+        </AuthProvider>
+      </TaskProvider> */}
+      <LoginStatus></LoginStatus>
     </>
   );
 }
